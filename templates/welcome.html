@@ -4,6 +4,9 @@
 		<title>Welcome!</title>
 	</head>
 	<body>
+		{% set url = 'http://localhost:8080/myblog/' + username%}
 		<h4>Welcome {{username}}!</h4>
+		<a href={{url}}>Go into my personal blog!</a>
+
 	</body>
 </html>
