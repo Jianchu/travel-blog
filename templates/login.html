@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Signup Now! </title>
+		<style>
+			#password{
+				color:red;
+				display:inline;
+			}
+			#username{
+				color:red;
+				display:inline;
+			}
+		</style>
+	</head>
+
+	<body>
+		<font size = "6"> <b>Login!</b></font>
+		<br>
+		<form method = "post">
+			<lable> Username
+				<input type="text" name = "username" value="{{username}}">
+			</lable>
+			<div id="username">{{username_error}}</div>
+			<br>
+
+			<lable> Password
+				<input type="password" name = "password" value="">
+			</lable>
+			<div id="username">{{password_error}}</div>
+			<br>
+			<input type = "submit">
+
+		</form>
+	</body>
+</html>
