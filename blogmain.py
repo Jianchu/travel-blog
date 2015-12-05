@@ -1,7 +1,7 @@
 import os
 import webapp2
 import blogpage
-import signup
+import logsystem
 
-app = webapp2.WSGIApplication([('/blog', blogpage.BlogPage),('/',blogpage.BlogPage), ('/signup',signup.SignUp),('/welcome/([a-zA-Z0-9_-]{3,20}$)',signup.Welcome),('/login',signup.Login)], debug=True)
+app = webapp2.WSGIApplication([('/blog', blogpage.BlogPage),('/',blogpage.BlogPage), ('/signup',logsystem.SignUp),('/welcome/([a-zA-Z0-9_-]{3,20}$)',logsystem.Welcome),('/login',logsystem.Login)], debug=True)
 
