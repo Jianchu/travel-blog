@@ -138,13 +138,13 @@ class SignUp(handler.Handler):
 		if (not error_flag):
 			self.render_sign_up(username, email, username_error, password_error, password_verify_error, email_error)
 			return
-		key_mame = get_total_user() + 1
-		new_user = models.User(key_mame = str(username), user_id = key_mame, username = username, password = password, email = email)
-		old_number_users = get_total_user()
+		key_mame = blogutils.get_total_user() + 1
+		new_user = models.User(key_mame = str(username), user_id = key_mame, username = username, password = password, email = email, number_of_blog = 0)
+		old_number_users = blogutils.get_total_user()
 		new_user.put()
 		self.response.headers.add_header('Set-Cookie', 'username=%s' % str(username))
 		while True:
-			new_number_users = get_total_user()			
+			new_number_users = blogutils.get_total_user()			
 			if old_number_users != new_number_users:
 				break
 		self.redirect("/welcome")

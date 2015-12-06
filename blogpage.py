@@ -3,6 +3,7 @@ import webapp2
 import handler
 import blogutils
 from google.appengine.ext import db
+
 class BlogPage(handler.Handler):
 	"""the main page of travel-blog"""
 	def render_blogpage(self, username = ""):
