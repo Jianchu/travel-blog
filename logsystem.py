@@ -61,6 +61,7 @@ class Login(handler.Handler):
 		self.render("login.html", username = username, username_error = username_error, password_error = password_error, message = message)
 
 	def get(self):
+		message = ""
 		username = self.request.cookies.get('username')
 		if username:
 			query = db.GqlQuery("SELECT * FROM User WHERE username = :username",username=username)
