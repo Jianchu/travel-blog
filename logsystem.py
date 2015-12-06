@@ -1,7 +1,10 @@
 from google.appengine.ext import db
+import webapp2
 import models
 import handler
 import re
+import time
+import blogutils 
 
 USERNAME = re.compile(r"^[a-zA-Z0-9_-]{3,20}$")
 PASSWORD = re.compile(r"^.{3,20}$")
@@ -46,15 +49,24 @@ def get_total_user():
 	return models.User.all().count()
 
 class Welcome(handler.Handler):
-	def get(self, username):
-		self.render("welcome.html", username = username)
+	def get(self):
+		username = blogutils.checkcookie(self.request.cookies.get('username'))
+		if username:
+			self.render("welcome.html", username = username)
+			return
+		self.redirect("/signup")
 
 class Login(handler.Handler):
-	def render_login(self, username = "", username_error = "", password_error = ""):
-		self.render("login.html", username = username, username_error = username_error, password_error = password_error)
+	def render_login(self, username = "", username_error = "", password_error = "", message = ""):
+		self.render("login.html", username = username, username_error = username_error, password_error = password_error, message = message)
 
 	def get(self):
-		self.render_login()
+		username = self.request.cookies.get('username')
+		if username:
+			query = db.GqlQuery("SELECT * FROM User WHERE username = :username",username=username)
+			user = query.get()
+			message = "You have logged as %s, do you want to login another account?" % user.username  					
+		self.render_login("","","",message)
 
 	def post(self):
 		username = self.request.get('username')
@@ -76,8 +88,14 @@ class Login(handler.Handler):
 			error_flag = False
 		if (not error_flag): 
 			self.render_login(username, username_error, password_error)
-			return 
-		self.redirect("/welcome/%s" % str(username))		
+			return
+		self.response.headers.add_header('Set-Cookie', 'username=%s' % str(username)) 
+		self.redirect("/myblog/%s" % username)		
+
+class Logout(handler.Handler):
+	def get(self):
+		self.response.headers.add_header('Set-Cookie', 'username=')
+		self.redirect("/blog")
 
 class SignUp(handler.Handler):
 	"""handle signup page"""
@@ -121,7 +139,11 @@ class SignUp(handler.Handler):
 			return
 		key_mame = get_total_user() + 1
 		new_user = models.User(key_mame = str(username), user_id = key_mame, username = username, password = password, email = email)
+		old_number_users = get_total_user()
 		new_user.put()
-		print new_user.key()
-		# self.response.headers.add_header('Set-Cookie', 'user_id=%s' % str(key_mame))
-		self.redirect("/welcome/%s" % str(username))
+		self.response.headers.add_header('Set-Cookie', 'username=%s' % str(username))
+		while True:
+			new_number_users = get_total_user()			
+			if old_number_users != new_number_users:
+				break
+		self.redirect("/welcome")

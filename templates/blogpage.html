@@ -5,6 +5,12 @@
 	</head>
 	<body>
 		<h3> This is the first page!</h3>
+		{%if username%}
+			{% set url = 'http://localhost:8080/myblog/' + username%}
+			<h4>Welcome {{username}}!</h4>
+			<a href={{url}}>Go into my personal blog!</a>
+			<br>
+		{%endif%}
 
 		<a href="http://localhost:8080/signup"> signup here!</a>
 		<br>
