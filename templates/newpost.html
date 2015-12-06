@@ -44,11 +44,11 @@
 	</style>	
 	<body>
 		<h4>I am {{username}}!</h4>
-		<a href="http://localhost:8080/blog"> back to blog</a>
+		<a href="/blog"> back to blog</a>
 		<br>
-		<a href="http://localhost:8080/logout"> logout!</a>
+		<a href="/logout"> logout!</a>
 		<br>
-		{% set url = 'http://localhost:8080/myblog/' + username%}
+		{% set url = '/myblog/' + username%}
 		<a href={{url}}>Go into my personal blog!</a>
 
 	<div class = "title">new post</div>

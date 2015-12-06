@@ -6,13 +6,13 @@
 	<body>
 		<h4>I am {{username}}!</h4>
 		<!-- {% set url = 'http://localhost:8080/myblog/' + username + '/newpost'%} -->
-		{% set url = 'http://localhost:8080/myblog/' + 'newpost/' + username%}
+		{% set url = '/myblog/' + 'newpost/' + username%}
 		<a href={{url}}>write a new post!</a>
 		<!-- <a href={{"http://localhost:8080/myblog/newpost"}}>write a new post!</a> -->
 		<br>
-		<a href="http://localhost:8080/blog"> back to blog</a>
+		<a href="/blog"> back to blog</a>
 		<br>
-		<a href="http://localhost:8080/logout"> logout!</a>
+		<a href="/logout"> logout!</a>
 
 		<label>
 			<div class="title">{{username}} Blog</div>

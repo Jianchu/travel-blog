@@ -4,10 +4,10 @@
 		<title>Welcome!</title>
 	</head>
 	<body>
-		{% set url = 'http://localhost:8080/myblog/' + username%}
+		{% set url = '/myblog/' + username%}
 		<h4>Welcome {{username}}!</h4>
 		<a href={{url}}>Go into my personal blog!</a>
-		<a href="http://localhost:8080/blog"> back to blog</a>
-		<a href="http://localhost:8080/logout"> logout!</a>
+		<a href="/blog"> back to blog</a>
+		<a href="/logout"> logout!</a>
 	</body>
 </html>
