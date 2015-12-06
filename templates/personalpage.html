@@ -14,6 +14,18 @@
 		<br>
 		<a href="http://localhost:8080/logout"> logout!</a>
 
-
+		<label>
+			<div class="title">{{username}} Blog</div>
+		</label>
+		<br>
+		<br>
+		{% for blog in blogs%}
+				<div class="blog-title">{{blog.title}}</div>
+				<div id="blog-created">{{blog.created}}</div>
+			<hr>
+			<div class = "blog-content">{{blog.content}}</div>
+			<br>
+			<br>
+		{%endfor%}		
 	</body>
 </html>

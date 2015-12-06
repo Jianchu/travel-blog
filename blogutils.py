@@ -19,7 +19,7 @@ def get_total_blog():
 def get_number_blog_current_user(username):
 	query = db.GqlQuery("SELECT * FROM User WHERE username = :username",username=username)
 	user = query.get()
-	return user.number_of_blog
+	return int(user.number_of_blog)
 
 def get_current_user_id(username):
 	query = db.GqlQuery("SELECT * FROM User WHERE username = :username",username=username)
@@ -31,3 +31,6 @@ def add_new_blog(username):
 	user = query.get()
 	user.number_of_blog = user.number_of_blog + 1
 	user.put()
+
+def get_current_blogs(username):
+	return db.GqlQuery("SELECT * FROM Blog WHERE username = :username ORDER BY created DESC",username=username)
