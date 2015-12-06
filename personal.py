@@ -15,7 +15,6 @@ class PersonalPage(handler.Handler):
 			return user.username
 
 	def get(self, username):
-		print username + "age"
 		username = self.getCurrentUser()
 		if username:
 			blogs = blogutils.get_current_blogs(username)

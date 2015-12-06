@@ -18,6 +18,16 @@
 		<br>
 		{%if username%}
 			<a href="http://localhost:8080/logout"> logout!</a>
-		{%endif%}		
+		{%endif%}
+
+		{% for blog in all_blogs%}
+				<div class="blog-title">{{blog.title}}</div>
+				<div id="blog-created">{{blog.created}}</div>
+				<div id="blog-user">author: {{blog.username}}</div>
+			<hr>
+			<div class = "blog-content">{{blog.content}}</div>
+			<br>
+			<br>
+		{%endfor%}						
 	</body>
 </html>

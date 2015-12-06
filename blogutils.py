@@ -34,3 +34,6 @@ def add_new_blog(username):
 
 def get_current_blogs(username):
 	return db.GqlQuery("SELECT * FROM Blog WHERE username = :username ORDER BY created DESC",username=username)
+
+def get_all_blogs():
+	return db.GqlQuery("SELECT * FROM Blog ORDER BY created DESC")		
