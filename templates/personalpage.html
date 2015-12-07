@@ -21,6 +21,9 @@
 		<br>
 		{% for blog in blogs%}
 				<div class="blog-title">{{blog.title}}</div>
+				<br>
+				{% set thisurl = '/myblog/' + 'editpost/' + blog.blog_id%}				
+				<a href={{thisurl}}>edit!</a>
 				<div id="blog-created">{{blog.created}}</div>
 			<hr>
 			<div class = "blog-content">{{blog.content}}</div>

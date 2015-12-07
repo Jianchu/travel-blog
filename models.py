@@ -16,3 +16,4 @@ class Blog(db.Model):
 	title = db.StringProperty(required = True)	
 	content = db.TextProperty(required = True)
 	created = db.DateTimeProperty(auto_now_add = True)
+	number_of_edition = db.IntegerProperty(required = True)
