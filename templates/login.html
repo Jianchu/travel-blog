@@ -2,38 +2,49 @@
 <html>
 	<head>
 		<title> Signup Now! </title>
-		<style>
-			#password{
-				color:red;
-				display:inline;
-			}
-			#username{
-				color:red;
-				display:inline;
-			}
-		</style>
+		<link rel= "stylesheet" type="text/css" href="/css/logsystem.css">
 	</head>
 
 	<body>
-		<font size = "6"> <b>Login!</b></font>
-		<div>{{message}}</div>		
-		<br>
-		<form method = "post">
-			<lable> Username
-				<input type="text" name = "username" value="{{username}}">
-			</lable>
-			<div id="username">{{username_error}}</div>
+		<div id = "topbar"> 
+			 <a href="/signup"> 
+			 	<div id = "signup_in_login">Sign Up</div>
+			 </a>
+
+			 <a href="/blog"> 
+			 	<div id = "blog">back to blog </div>
+			 </a>
+		</div>
+
+		<div id = "login_login">
+			<div id = "title">
+				Log In
+
+			<br>
+			</div>
 			<br>
 
-			<lable> Password
-				<input type="password" name = "password" value="">
+
+		<form method = "post">
+
+			<lable> 
+				<div id = "username_title"> Username</div>
+				<div> <input id = "username_input" type="text" name = "username" value="{{username}}"> </div>
+				<div id="username_error">{{username_error}}</div>
 			</lable>
-			<div id="username">{{password_error}}</div>
 			<br>
-			<input type = "submit">
+
+			<lable> 
+				<div id = "password_title"> Password</div>
+				<div> <input id = "password_input" type="password" name = "password" value=""> </div>
+				<div id="password_error">{{password_error}}</div>
+			</lable>
+			<div id = "submit"> <input type = "submit" value = "login" > </div>
 
 		</form>
-		<a href="/signup"> signup here!</a>
-		<a href="/blog"> back to blog</a>
+
+		</div>
+		<div id = "message">{{message}}</div>
 	</body>
 </html>
+

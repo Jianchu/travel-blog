@@ -66,7 +66,7 @@ class Login(handler.Handler):
 		if username:
 			query = db.GqlQuery("SELECT * FROM User WHERE username = :username",username=username)
 			user = query.get()
-			message = "You have logged as %s, do you want to login another account?" % user.username  					
+			message = "You have logged as %s, do you want to login to another account?" % user.username  					
 		self.render_login("","","",message)
 
 	def post(self):
