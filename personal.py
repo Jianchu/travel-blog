@@ -49,18 +49,18 @@ class NewEditPost(handler.Handler):
 			blog_id = self.request.get("blog_id")
 			if (title and content):
 				old_num_blog = blogutils.get_number_blog_current_user(username)
-				# if blog_id:
-				# 	old_num_edition = blogutils.get_number_edition_current_blog(blog_id)
-				# edit_flag = self.new(title, content, username)
+				if blog_id:
+					old_num_edition = blogutils.get_number_edition_current_blog(blog_id)
+				edit_flag = self.new(title, content, username)
 				new_flag = self.edit(blog_id, title, content)
 				while new_flag:
 					new_num_blog = blogutils.get_number_blog_current_user(username)		
 					if old_num_blog != new_num_blog:
 						break
-				# while edit_flag:
-				# 	new_num_edition = blogutils.get_number_edition_current_blog(blog_id)					
-				# 	if old_num_edition != new_num_edition:
-				# 		break
+				while edit_flag:
+					new_num_edition = blogutils.get_number_edition_current_blog(blog_id)		
+					if old_num_edition != new_num_edition:
+						break
 				self.redirect("/myblog/%s" %str(username))
 			else:
 				error = "Subject and content, please!"
@@ -76,7 +76,7 @@ class NewPost(NewEditPost):
 
 	def new(this, title, content, username):
 		number_blog = blogutils.get_number_blog_current_user(username)
-		new_blog = models.Blog(title = title, content = content, username = username, blog_id = username + "_"+ str(number_blog), number_of_edition = 0)
+		new_blog = models.Blog(title = title, content = content, username = username, number_of_edition = 0, blog_id = username + "_"+ str(number_blog))
 		new_blog.put()
 		blogutils.add_new_blog(username)
 		return False
@@ -89,7 +89,6 @@ class EditPost(NewEditPost):
 	def get(self, blog_id):
 		blog = blogutils.get_blog_by_id(blog_id)
 		username = self.getCurrentUser()
-		print blog.content
 		if username:
 			self.render_post(blog_id = blog.blog_id, username = blog.username, title = blog.title, content = blog.content)
 			return
@@ -99,8 +98,8 @@ class EditPost(NewEditPost):
 		blog = blogutils.get_blog_by_id(blog_id)
 		blog.title = title
 		blog.content = content
+		blog.number_of_edition = blog.number_of_edition + 1
 		blog.put()
-		blogutils.edit_old_blog(blog_id)
 		return False
 
 
