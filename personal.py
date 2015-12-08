@@ -102,4 +102,31 @@ class EditPost(NewEditPost):
 		blog.put()
 		return False
 
+class DeletePost(handler.Handler):
+
+	def getCurrentUser(self):
+		username = self.request.cookies.get('username')
+		if username:
+			query = db.GqlQuery("SELECT * FROM User WHERE username = :username",username=username)
+			user = query.get() 	
+			return user.username
+
+	def get(self, blog_id):
+		blog = blogutils.get_blog_by_id(blog_id)
+		username = self.getCurrentUser()
+		if username:
+			self.render("deletepost.html", blog = blog)
+			return
+		self.redirect("/signup")
+
+	def post(self, blog_id):
+		blog_id = self.request.get("blog_id")
+		username = self.getCurrentUser()
+		if blog_id:
+			blogutils.delete_this_blog(blog_id)
+		while True:
+			blog = blogutils.get_blog_by_id(blog_id)
+			if not blog:
+				break	
+		self.redirect("/myblog/%s" %str(username))			
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Personal Page!</title>
+	</head>
+	<style type="text/css">
+		.title{
+			font-weight: bold;
+			font-size: 20px;
+		}
+		body{
+			font-family: sans-serif;
+			width: 800px;
+			margin: 0 auto;
+			padding: 10px;
+		}
+
+		.error{
+			color: red
+		}
+
+		label{
+			display: block;
+			font-size: 20 px;
+		}
+
+		input[type=text]{
+			width: 400px;
+			font-size: 20px;
+			padding: 2px;
+		}
+
+		textarea{
+			width: 400px;
+			height: 200px;
+			font-size: 17px;
+			font-family: monospace;
+		}
+
+		input[type=submit]{
+			font-size: 24px;
+		}
+
+	</style>	
+	<body>
+		<h4>I am {{blog.username}}!</h4>
+		<a href="/blog"> back to blog</a>
+		<br>
+		<a href="/logout"> logout!</a>
+		<br>
+		{% set url = '/myblog/' + blog.username%}
+		<a href={{url}}>Go into my personal blog!</a>
+
+		<div class = "title">do you want to delete the following post?</div>
+		<div class="blog-title">{{blog.title}}</div>
+		<div id="blog-created">{{blog.created}}</div>
+		<div id="blog-user">author: {{blog.username}}</div>
+		<hr>
+		<div class = "blog-content">{{blog.content}}</div>
+
+		<form method="post">
+			<input type="hidden" name="blog_id" value={{blog.blog_id}}>
+			<input type ="submit" value="confirm">
+		</form>
+
+	</body>
+</html>

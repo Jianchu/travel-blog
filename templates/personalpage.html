@@ -22,8 +22,11 @@
 		{% for blog in blogs%}
 				<div class="blog-title">{{blog.title}}</div>
 				<br>
-				{% set thisurl = '/myblog/' + 'editpost/' + blog.blog_id%}				
-				<a href={{thisurl}}>edit!</a>
+				{% set editsurl = '/myblog/' + 'editpost/' + blog.blog_id%}				
+				<a href={{editsurl}}>edit!</a>
+				<br>
+				{% set deleteurl = '/myblog/' + 'deletepost/' + blog.blog_id%}				
+				<a href={{deleteurl}}>delete!</a>				
 				<div id="blog-created">{{blog.created}}</div>
 			<hr>
 			<div class = "blog-content">{{blog.content}}</div>

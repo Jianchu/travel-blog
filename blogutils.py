@@ -47,6 +47,11 @@ def get_number_edition_current_blog(blog_id):
 	blog = query.get()
 	return int(blog.number_of_edition)
 
+def delete_this_blog(blog_id):
+	query = db.GqlQuery("SELECT * FROM Blog WHERE blog_id = :blog_id" ,blog_id=blog_id)
+	blog = query.get()
+	db.delete(blog)
+
 # def edit_old_blog(blog_id):
 # 	query = db.GqlQuery("SELECT * FROM Blog WHERE blog_id = :blog_id" ,blog_id=blog_id)
 # 	blog = query.get()
