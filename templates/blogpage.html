@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Travel blog!</title>
+		<title>Travel Blog</title>
+		<link rel= "stylesheet" type="text/css" href="/css/blogpage.css">
 	</head>
 	<body>
-		<h3> This is the first page!</h3>
-		{%if username%}
-			{% set url = 'http://localhost:8080/myblog/' + username%}
-			<h4>Welcome {{username}}!</h4>
-			<a href={{url}}>Go into my personal blog!</a>
-			<br>
-		{%endif%}
+		<div id = "topbar"> 
+			<a href="/signup"> 
+				<div id = "signup">Sign Up</div>
+			</a>
 
-		<a href="/signup"> signup here!</a>
-		<br>
-		<a href="/login"> login here!</a>
-		<br>
+			<a href="/login"> 
+				<div id = "login">Log In</div>
+			</a>
+			<br>
+			<br>
+			{%if username%}
+				<a href="/logout"> 
+					<div id = "logout"> Logout</div>
+				</a>
+				<div id = "username">{{username}}</div>
+			{%endif%}
+		</div>
+
+		<h2 id = "title" align="center">About your traveling story</h2>
 		{%if username%}
-			<a href="/logout"> logout!</a>
+			{% set url = '/myblog/' + username%}
+			<div id = "personal">
+				<a href={{url}}>Enter my personal blog</a>				
+			</div>
+			
+			<br>
+			<br>
 		{%endif%}
 
 		{% for blog in all_blogs%}
-				<div class="blog-title">{{blog.title}}</div>
-				<div id="blog-created">{{blog.created}}</div>
+			<div id = "each-blog">
+				<div id="blog-title">{{blog.title}}</div>
 				<div id="blog-user">author: {{blog.username}}</div>
-			<hr>
-			<div class = "blog-content">{{blog.content}}</div>
-			<br>
-			<br>
+				<div id="blog-created">{{blog.created.strftime("%Y-%m-%d %H:%M:%S")}}</div>
+				<div id = "blog-content">{{blog.content}}</div>
+				<br>
+				<br>
+			</div>
 		{%endfor%}						
 	</body>
 </html>

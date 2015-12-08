@@ -1,0 +1,146 @@
+#title{
+	font-weight: bold;
+	font-size: 30px;
+	color: blue;
+	font-style: italic;
+}
+
+#topbar{
+	width:100%;
+	height: 60px;
+    padding:10px;
+    color: red;
+ 	background-color: yellowgreen;
+}
+#signup{
+/* 	background-color: red;*/
+ 	width:70px;
+	font-weight: bold;
+	font-size: 20px;
+	display: inline;
+	float: right; 
+	margin-left: 5px;
+	margin-right: 15px;
+ 	border-color: black;
+ 	border-style: solid;
+}
+#login{
+	font-weight: bold;
+	font-size: 20px;
+	display: inline;
+/*	background-color: red;*/
+	float: right;
+	margin-left: 5px;
+ 	border-color: black;
+ 	border-style: solid;		
+}
+
+#logout{
+	font-weight: bold;
+	font-size: 20px;
+	display: inline;
+/*	background-color: red;*/
+	float: right;
+	margin-left: 5px;
+	margin-right: 15px;
+ 	border-color: black;
+ 	border-style: solid;
+}
+
+#username{
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+	float: right;
+}
+
+#personal{
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+	float: left;
+ 	border-color: black;
+ 	border-style: solid;
+ 	background-color: gold;
+ 	border-width: 1px;	
+}
+
+a{
+	text-decoration: none
+}
+
+a:visited {
+	color:black;
+}
+
+a:hover{
+	color:gray;
+}
+
+a:active{
+	color:gray;
+}
+
+#each-blog{
+	border-top-style: dotted;
+	width:40%;
+}
+
+#blog-title {
+	font-weight: bold;
+	font-size: 23px;
+	font-style: oblique;
+}
+
+#blog-user {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#blog-created {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#blog-content {
+	margin-top: 15px;
+	margin-right: 15px;
+}
+
+      /* unvisited link */
+/*  /* visited link */*/
+/*a:hover {}  /* mouse over link */*/
+/*a:active {}*/
+
+/*body{
+	font-family: sans-serif;
+	width: 800px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.error{
+	color: red
+}
+
+label{
+	display: block;
+	font-size: 20 px;
+}
+
+input[type=text]{
+	width: 400px;
+	font-size: 20px;
+	padding: 2px;
+}
+
+textarea{
+	width: 400px;
+	height: 200px;
+	font-size: 17px;
+	font-family: monospace;
+}
+
+input[type=submit]{
+	font-size: 24px;
+}*/
