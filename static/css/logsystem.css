@@ -1,0 +1,124 @@
+#topbar{
+	width:100%;
+	height: 60px;
+    padding:10px;
+    color: red;
+ 	background-color: yellowgreen;
+}
+
+#title{
+	display: table;
+    margin: 0 auto;
+	margin-top: 10px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#username_title{
+	display: inline;
+}
+
+#password_title{
+	display: inline;
+}
+
+#password_verify_title{
+	display: inline;
+}
+
+#email_title{
+	display: inline;
+}
+
+#username_input{
+	display: inline;
+}
+
+#password_input{
+	display: inline;
+}
+
+#password_verify_input{
+	display: inline;
+}
+
+#email_input{
+	display: inline;	
+}
+
+#username_error{
+	color:red;
+	display:inline;
+}
+
+#password_error{
+	color:red;
+	display:inline;
+}
+
+#password_verify_error{
+	color:red;
+	display:inline;
+}
+
+#email_error{
+	color:red;
+	display:inline;
+}
+
+#signup{
+	display: table;
+    margin: 0 auto;
+}
+
+#submit{
+	display: table;
+    margin: 0 auto;
+    font-size: 50px;
+}
+
+
+#blog{
+	display: table;
+    margin: 0 auto;
+}
+
+a{
+	text-decoration: none
+}
+
+a:visited {
+	color:black;
+}
+
+a:hover{
+	color:gray;
+}
+
+a:active{
+	color:gray;
+}
+
+#login{
+ 	width:70px;
+	font-weight: bold;
+	font-size: 20px;
+	display: inline;
+	float: right; 
+	margin-left: 5px;
+	margin-right: 15px;
+ 	border-color: black;
+ 	border-style: solid;	
+}
+
+#blog{
+	width:110px;
+	font-weight: bold;
+	font-size: 20px;
+	display: inline;
+/*	background-color: red;*/
+	float: right;
+	margin-left: 5px;
+ 	border-color: black;
+ 	border-style: solid;
+}

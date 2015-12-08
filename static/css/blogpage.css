@@ -63,6 +63,7 @@
  	border-style: solid;
  	background-color: gold;
  	border-width: 1px;	
+ 	margin-left: 15px;
 }
 
 a{
@@ -83,7 +84,8 @@ a:active{
 
 #each-blog{
 	border-top-style: dotted;
-	width:40%;
+	width:45%;
+	margin-left: 15px;
 }
 
 #blog-title {
@@ -106,41 +108,3 @@ a:active{
 	margin-top: 15px;
 	margin-right: 15px;
 }
-
-      /* unvisited link */
-/*  /* visited link */*/
-/*a:hover {}  /* mouse over link */*/
-/*a:active {}*/
-
-/*body{
-	font-family: sans-serif;
-	width: 800px;
-	margin: 0 auto;
-	padding: 10px;
-}
-
-.error{
-	color: red
-}
-
-label{
-	display: block;
-	font-size: 20 px;
-}
-
-input[type=text]{
-	width: 400px;
-	font-size: 20px;
-	padding: 2px;
-}
-
-textarea{
-	width: 400px;
-	height: 200px;
-	font-size: 17px;
-	font-family: monospace;
-}
-
-input[type=submit]{
-	font-size: 24px;
-}*/

@@ -2,56 +2,57 @@
 <html>
 	<head>
 		<title> Signup Now! </title>
-		<style>
-			#password{
-				color:red;
-				display:inline;
-			}
-			#username{
-				color:red;
-				display:inline;
-			}
-			#email{
-				color:red;
-				display:inline;
-			}
-
-		</style>
+		<link rel= "stylesheet" type="text/css" href="/css/logsystem.css">
 	</head>
 
 	<body>
-		<font size = "6"> <b>Signup!</b></font>
-		<br>
-		<form method = "post">
-			<lable> Username
-				<input type="text" name = "username" value="{{username}}">
-			</lable>
-			<div id="username">{{username_error}}</div>
+		<div id = "topbar"> 
+			 <a href="/login"> 
+			 	<div id = "login">Log In </div>
+			 </a>
+
+			 <a href="/blog"> 
+			 	<div id = "blog">back to blog </div>
+			 </a>
+		</div> 
+		<div id = "signup">
+
+			<div id = "title">
+				Sign Up
+			</div>
 			<br>
 
-			<lable> Password
-				<input type="password" name = "password" value="">
-			</lable>
-			<div id="username">{{password_error}}</div>
-			<br>
+			<form method = "post">
+				<lable> 
+					<div id = "username_title"> Username</div>
+					<div> <input id = "username_input" type="text" name = "username" value="{{username}}"> </div>
+					<div id="username_error">{{username_error}}</div>
+				</lable>				
+				<br>
 
-			<lable> Verify Password
-				<input type="password" name = "password_verify" value="">
-			</lable>
-			<div id="password">{{password_verify_error}}</div>
-			<br>
+				<lable> 
+					<div id = "password_title"> Password</div>
+					<div> <input id = "password_input" type="password" name = "password" value=""> </div>
+					<div id="password_error">{{password_error}}</div>
+				</lable>
+				<br>
 
-			<lable> Email (optional)
-				<input type="text" name = "email" value="{{email}}">
-			</lable>
-			<div id="email">{{email_error}}</div>
-			<br>
+				<lable> 
+					<div id = "password_verify_title">Verify Password</div>
+					<div> <input type="password" id = "password_verify_input" name = "password_verify" value=""> </div>
+					<div id="password_verify_error">{{password_verify_error}}</div>
+				</lable>
+				<br>
 
-			<input type = "submit">
+				<lable> 
+					<div id = "email_title"> Email (optional) </div>
+					<div> <input id = "email_input" type="text" name = "email" value="{{email}}"> </div>
+					<div id="email_error">{{email_error}}</div>
+				</lable>
+				<br>
 
-		</form>
-
-		<a href="/login"> login!</a>
-		<a href="/blog"> back to blog</a>
+				<div id = "submit"> <input type = "submit"> </div>
+			</form>
+		</div>
 	</body>
 </html>
