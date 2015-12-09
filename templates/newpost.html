@@ -2,70 +2,54 @@
 <html>
 	<head>
 		<title>Write down your traveling story</title>
+		<link rel= "stylesheet" type="text/css" href="/css/newpost.css">
 	</head>
-	<style type="text/css">
-		.title{
-			font-weight: bold;
-			font-size: 20px;
-		}
-		body{
-			font-family: sans-serif;
-			width: 800px;
-			margin: 0 auto;
-			padding: 10px;
-		}
 
-		.error{
-			color: red
-		}
 
-		label{
-			display: block;
-			font-size: 20 px;
-		}
-
-		input[type=text]{
-			width: 400px;
-			font-size: 20px;
-			padding: 2px;
-		}
-
-		textarea{
-			width: 400px;
-			height: 200px;
-			font-size: 17px;
-			font-family: monospace;
-		}
-
-		input[type=submit]{
-			font-size: 24px;
-		}
-
-	</style>	
 	<body>
-		<h4>I am {{username}}!</h4>
-		<a href="/blog"> back to blog</a>
-		<br>
-		<a href="/logout"> logout!</a>
-		<br>
+
+	<div id = "topbar">
+		<a href="/blog"> 
+			<div id = "back_blog">Back to Blog</div>
+		</a>
+
 		{% set url = '/myblog/' + username%}
-		<a href={{url}}>Go into my personal blog!</a>
+		<a href={{url}}>
+			<div id = "personal">Personal Page</div>
+		</a>
 
-	<div class = "title">new post</div>
+		<br>
+		<br>
+		{%if username%}
+			<a href="/logout"> 
+				<div id = "logout">Logout</div>
+			</a>
+			<div id = "username">{{username}}</div>
 
+		{%endif%}
+	</div>
+
+
+	<h2 id = "title" align="center">Write a new post</h2>
+
+	<div id = "new post" align="center">
 	<form method="post">
 		<label>
-			<div>subject</div>
+			<div id = "subject-title">Subject</div>
 			<input type = "text" name = "title" value="{{title}}">
 		</label>
-
+		<br>
+		<br>
 		<lable>
-			<div>blog</div>
+			<div id = "content-title">Content</div>
 			<textarea name="content">{{content}}</textarea>
 		</label>		
 		<div class = "error">{{error}}</div>
+		<br>
 		<input type ="submit">
 	</form>
+	</div>
+
 
 	</body>
 </html>

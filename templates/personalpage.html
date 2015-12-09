@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Personal Page!</title>
+		<title>Personal Page</title>
+		<link rel= "stylesheet" type="text/css" href="/css/blogpage.css">
 	</head>	
 	<body>
-		<h4>I am {{username}}!</h4>
-		<!-- {% set url = 'http://localhost:8080/myblog/' + username + '/newpost'%} -->
-		{% set url = '/myblog/' + 'newpost/' + username%}
-		<a href={{url}}>write a new post!</a>
-		<!-- <a href={{"http://localhost:8080/myblog/newpost"}}>write a new post!</a> -->
-		<br>
-		<a href="/blog"> back to blog</a>
-		<br>
-		<a href="/logout"> logout!</a>
+		<div id = "topbar">
+			<a href="/blog"> 
+				<div id = "back_blog"> back to blog </div>
+			</a> 
+			<br>
+			<br>
+			{%if username%}
+				<a href="/logout"> 
+					<div id = "logout"> Logout</div>
+				</a>
+				<div id = "username">{{username}}</div>
+			{%endif%}
+		</div>
 
-		<label>
-			<div class="title">{{username}} Blog</div>
-		</label>
+		<h2 id = "title" align="center">{{username}}'s Blog</h2>
+		{% set url = '/myblog/' + 'newpost/' + username%}
+		<div id = "personal">
+		<a href={{url}}>Write a new post</a>
+		</div>
+
+		<br>
+
 		<br>
 		<br>
+
 		{% for blog in blogs%}
-				<div class="blog-title">{{blog.title}}</div>
+			<div id = "each-blog">
+				<div id="blog-title">{{blog.title}}</div>
 				<br>
 				{% set editsurl = '/myblog/' + 'editpost/' + blog.blog_id%}				
-				<a href={{editsurl}}>edit!</a>
-				<br>
-				{% set deleteurl = '/myblog/' + 'deletepost/' + blog.blog_id%}				
-				<a href={{deleteurl}}>delete!</a>				
-				<div id="blog-created">{{blog.created}}</div>
+				<a href={{editsurl}}>
+					<div id = "edit"> Edit </div>
+				</a>
+				{% set deleteurl = '/myblog/' + 'deletepost/' + blog.blog_id%}
+
+				<a href={{deleteurl}}>
+					<div id = "delete"> Delete </div>
+				</a>				
+				<div id="blog-created">{{blog.created.strftime("%Y-%m-%d %H:%M:%S")}}</div>
 			<hr>
-			<div class = "blog-content">{{blog.content}}</div>
+			<div id = "blog-content">{{blog.content}}</div>
 			<br>
 			<br>
+			</div>
 		{%endfor%}		
 	</body>
 </html>
