@@ -6,32 +6,53 @@
 	</head>
 
 	<body>
-		<h4>I am {{username}}!</h4>
-		<a href="/blog"> back to blog</a>
-		<br>
-		<a href="/logout"> logout!</a>
-		<br>
+
+	<div id = "topbar">
+		<a href="/blog"> 
+			<div id = "back_blog">Back to Blog</div>
+		</a>
+
 		{% set url = '/myblog/' + username%}
-		<a href={{url}}>Go into my personal blog!</a>
+		<a href={{url}}>
+			<div id = "personal">Personal Page</div>
+		</a>
 
-	<div class = "title">edit post!</div>
+		<br>
+		<br>
+		{%if username%}
+			<a href="/logout"> 
+				<div id = "logout">Logout</div>
+			</a>
+			<div id = "username">{{username}}</div>
 
+		{%endif%}
+	</div>
+	<br>
+	<div id = "title" align="center">Edit Post</div>
+
+	<br>
+	<br>
+
+	<div id = "new post" align="center">
 	<form method="post">
 		<label>
-			<div>subject</div>
+			<div id = "subject-title">Subject</div>
 			<input type = "text" name = "title" value="{{title}}">
 		</label>
-
+		<br>
+		<br>
 		<lable>
-			<div>blog</div>
+			<div id = "content-title">Content</div>
 			<textarea name="content">{{content}}</textarea>
 		</label>
 		<input type="hidden" name="blog_id" value={{blog_id}}>		
 		<div class = "error">{{error}}</div>
+		<br>
 		<input type ="submit">
 	</form>
-
+	</div>
 	</body>
+	
 </html>
 
 

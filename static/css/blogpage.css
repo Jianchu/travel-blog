@@ -123,9 +123,13 @@ a:active{
 }
 
 #edit{
+	font-weight: bold;
 	display: inline;
+	color: red;
 }
 
 #delete{
+	font-weight: bold;
 	display: inline;
+	color: red;
 }
