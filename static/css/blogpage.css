@@ -64,6 +64,7 @@
  	background-color: gold;
  	border-width: 1px;	
  	margin-left: 15px;
+ 	display: inline;
 }
 
 a{
@@ -132,4 +133,15 @@ a:active{
 	font-weight: bold;
 	display: inline;
 	color: red;
+}
+
+#weather{
+	display: inline;
+	float: right;
+	margin-top: 0px;
+	margin-right: 180px;
+}
+
+#map{
+	float: right;
 }

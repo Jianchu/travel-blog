@@ -13,7 +13,8 @@
 
 			<a href="/login"> 
 				<div id = "login">Log In</div>
-			</a>
+			</a>	
+
 			<br>
 			<br>
 			{%if username%}
@@ -25,6 +26,7 @@
 		</div>
 
 		<h2 id = "title" align="center">About your traveling story</h2>
+
 		{%if username%}
 			{% set url = '/myblog/' + username%}
 			<div id = "personal">
@@ -34,6 +36,15 @@
 			<br>
 			<br>
 		{%endif%}
+		
+		<div id = "weather">
+		{% for content in location_weather%}
+			<div> {{content}}</div>
+		{%endfor%}
+		<img id = "map" src = "{{img_url}}">	
+		</div>
+
+		
 
 		{% for blog in all_blogs%}
 			<div id = "each-blog">
@@ -44,6 +55,10 @@
 				<br>
 				<br>
 			</div>
-		{%endfor%}						
+		{%endfor%}
+
+	
+
+								
 	</body>
 </html>
