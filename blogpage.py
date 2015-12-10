@@ -61,7 +61,7 @@ class BlogPage(handler.Handler):
 		if username:
 			self.render_blogpage(all_blogs,username, location_weather, img_url)
 			return
-		self.render_blogpage(all_blogs)
+		self.render_blogpage(all_blogs, "" ,location_weather, img_url)
 
 
 '''
