@@ -15,6 +15,8 @@
 				<div id = "login">Log In</div>
 			</a>	
 
+		<div id = "weather" class = "weather"> </div>
+
 			<br>
 			<br>
 			{%if username%}
@@ -37,9 +39,19 @@
 			<br>
 		{%endif%}
 
+	    <form id="form-container" class="form-container">
+	        <label for="province">Province: </label><input type="text" id="province" value="">
+	        <label for="city">City: </label><input type="text" id="city" value="">
 
-		<div id = "weather" class = "weather"> </div>
-
+	        <button id="submit-btn">Submit</button>
+	    </form>
+	    <br>
+	    <br>
+	   	<div class="nytimes-container">
+	        <h3 id="nytimes-header">New York Times Articles</h3>
+	        <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!</ul>
+	        <div id = "map" class = "map"> </div>
+	    </div>
 
 		{% for blog in all_blogs%}
 			<div id = "each-blog">

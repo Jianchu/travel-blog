@@ -7,9 +7,9 @@
 
 #topbar{
 	width:100%;
-	height: 60px;
+	height: 80px;
     padding:10px;
-    color: red;
+    color: black;
  	background-color: yellowgreen;
 }
 #signup{
@@ -39,12 +39,28 @@
 	font-weight: bold;
 	font-size: 20px;
 	display: inline;
-/*	background-color: red;*/
 	float: right;
 	margin-left: 5px;
 	margin-right: 15px;
  	border-color: black;
  	border-style: solid;
+ 	width: 100;
+}
+
+#test{
+	font-weight: bold;
+	font-size: 20px;
+	display: inline;
+	float: left;	
+	border-color: black;
+	border-style: solid;
+}
+
+#weather{
+
+
+	display: inline;
+	float: left;	
 }
 
 #username{
@@ -63,9 +79,10 @@
  	border-style: solid;
  	background-color: gold;
  	border-width: 1px;	
- 	margin-left: 190px;
+ 	margin-left: 15px;
  	display: inline;
 }
+
 
 a{
 	text-decoration: none
@@ -85,12 +102,10 @@ a:active{
 
 #each-blog{
 	border-top-style: dotted;
-	width:70%;
+	width:45%;
 	margin-left: 15px;
-	display: table;
-    margin: 0 auto;
-
 }
+
 
 #blog-title {
 	font-weight: bold;
@@ -138,16 +153,7 @@ a:active{
 	color: red;
 }
 
-#weather{
-	display: inline;
-	float: right;
-	margin-top: 0px;
-	margin-right: 180px;
-}
 
-#map{
-	float: right;
-}
 
 #events{
     width: 33%;
@@ -183,4 +189,43 @@ a:active{
 
 .source{
 	text-decoration: underline;
+	color: red;
+}
+
+#form-container{
+	margin-right: 110px;
+	float: right;
+}
+
+.nytimes-container {
+    background-color: rgba(255,255,255,0.7);
+    float: right;
+    width: 500px;
+    margin-right: 110px;
+    
+}
+
+#nytimes-header{
+	float: right;
+	margin: 1px;
+	margin-right: 160px;
+
+}
+
+#nytimes-articles{
+	float: right;
+	margin: 1px;
+	margin-top: 5px;
+}
+
+#nytimes-articles a:visited{
+	color:blue;
+}
+
+#map{
+	float: right;
+	display: block;
+	margin-right: 90px;
+	position:relative; 
+	left:80px; 
 }
