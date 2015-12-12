@@ -63,7 +63,7 @@
  	border-style: solid;
  	background-color: gold;
  	border-width: 1px;	
- 	margin-left: 15px;
+ 	margin-left: 190px;
  	display: inline;
 }
 
@@ -85,8 +85,11 @@ a:active{
 
 #each-blog{
 	border-top-style: dotted;
-	width:45%;
+	width:70%;
 	margin-left: 15px;
+	display: table;
+    margin: 0 auto;
+
 }
 
 #blog-title {
@@ -176,4 +179,8 @@ a:active{
 	float:right;
 	text-decoration: underline;
 	background-color: yellow;
+}
+
+.source{
+	text-decoration: underline;
 }
