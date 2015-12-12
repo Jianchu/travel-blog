@@ -145,3 +145,35 @@ a:active{
 #map{
 	float: right;
 }
+
+#events{
+    width: 33%;
+    float: left;
+    margin-right: 30px;
+
+}
+#births{
+	width: 32%;
+    float: left;
+    margin-right: 20px;
+
+}
+
+
+#holidays{
+	width: 30%;
+    float: right;
+}
+
+#wiki{
+    width: 95%;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+}
+
+.more{
+	float:right;
+	text-decoration: underline;
+	background-color: yellow;
+}

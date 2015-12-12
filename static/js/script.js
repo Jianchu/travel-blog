@@ -93,14 +93,18 @@ function loadWikiEvents(){
     		for (var i = 0; i < 10; i++){
     			$events.append(events[i] + "<br>");
     		}
+    		$events.append("<div class = 'more'> <a  href='https://en.wikipedia.org/wiki/%content%'> more </a> </div>".replace("%content%",currentDate_event+"#Events"));
 
     		for (var i = 0; i < 10; i++){
     			$births.append(births[i] + "<br>");
     		}
+    		$births.append("<div class = 'more'> <a href='https://en.wikipedia.org/wiki/%content%'> more </a> </div>".replace("%content%",currentDate_event+"#Births"));
 
     		for (var i = 0; i < holidays.length; i++){
     			$holidays.append(holidays[i] + "<br>");
     		}
+    		$holidays.append("<div class = 'more'> <a href='https://en.wikipedia.org/wiki/%content%'> more </a> </div>".replace("%content%",currentDate_event+"#Holidays_and_observances"));
+
 
     		// var events = content.replace(/==Events==([\s\S]*?)[[361]]/, "$1");
 
