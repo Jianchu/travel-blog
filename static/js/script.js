@@ -57,6 +57,9 @@ function getMap(isp, city){
 
 function loadWikiEvents(){
 	var $events = $('#events');
+	var $births = $('#births');
+	var $holidays = $('#holidays');
+
 	currentDate_event = (curMonth + "_" + dayOfMonth).replace("st", "");
 	wiki_events = wiki.replace("%content%", currentDate_event);
 
@@ -87,9 +90,18 @@ function loadWikiEvents(){
     			holidays = content.substring(index_holidays,index_external).replace(/\[/g,"").replace(/\]/g,"").split('\n');
     		}	
 
-    		for (var i = 0; i < holidays.length; i++){
-    			$events.append(holidays[i] + "<br>");
+    		for (var i = 0; i < 10; i++){
+    			$events.append(events[i] + "<br>");
     		}
+
+    		for (var i = 0; i < 10; i++){
+    			$births.append(births[i] + "<br>");
+    		}
+
+    		for (var i = 0; i < holidays.length; i++){
+    			$holidays.append(holidays[i] + "<br>");
+    		}
+
     		// var events = content.replace(/==Events==([\s\S]*?)[[361]]/, "$1");
 
 
