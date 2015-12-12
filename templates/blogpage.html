@@ -38,19 +38,8 @@
 		{%endif%}
 
 
-		<div id = "weather" class = "weather">
-			
+		<div id = "weather" class = "weather"> </div>
 
-		</div>
-		
-<!-- 		<div id = "weather">
-		{% for content in location_weather%}
-			<div> {{content}}</div>
-		{%endfor%}
-		<img id = "map" src = "{{img_url}}">	
-		</div> -->
-
-		
 
 		{% for blog in all_blogs%}
 			<div id = "each-blog">
@@ -62,6 +51,11 @@
 				<br>
 			</div>
 		{%endfor%}
+		<div id = "splitLine"><hr></div>
+		
+		<div id = "events"></div>
+		<div id = "births"></div>
+		<div id = "holidays"></div>
 
 		<script src="/js/libs/jquery.min.js"></script>
 		<script src="/js/script.js"></script>
