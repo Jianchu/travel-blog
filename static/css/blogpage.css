@@ -1,3 +1,7 @@
+body{
+	background-color: Lavender;
+}
+
 #title{
 	font-weight: bold;
 	font-size: 30px;
@@ -82,7 +86,18 @@
  	margin-left: 15px;
  	display: inline;
 }
-
+#personal1{
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+	float: left;
+ 	border-color: black;
+ 	border-style: solid;
+ 	background-color: gold;
+ 	border-width: 1px;	
+ 	margin-left: 320px;
+ 	display: inline;
+}
 
 a{
 	text-decoration: none
@@ -104,6 +119,13 @@ a:active{
 	border-top-style: dotted;
 	width:45%;
 	margin-left: 15px;
+}
+
+#each-blog1{
+	border-top-style: dotted;
+	margin-left: 15px;
+	    width: 50%;
+    margin: 0 auto;
 }
 
 
@@ -202,6 +224,7 @@ a:active{
     float: right;
     width: 500px;
     margin-right: 110px;
+    background-color: Lavender;
     
 }
 
@@ -216,6 +239,7 @@ a:active{
 	float: right;
 	margin: 1px;
 	margin-top: 5px;
+	background-color: Lavender;
 }
 
 #nytimes-articles a:visited{
@@ -228,4 +252,5 @@ a:active{
 	margin-right: 90px;
 	position:relative; 
 	left:80px; 
+	background-color: Lavender;
 }

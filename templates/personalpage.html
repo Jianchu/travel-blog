@@ -21,7 +21,7 @@
 
 		<h2 id = "title" align="center">{{username}}'s Blog</h2>
 		{% set url = '/myblog/' + 'newpost/' + username%}
-		<div id = "personal">
+		<div id = "personal1">
 		<a href={{url}}>Write a new post</a>
 		</div>
 
@@ -31,7 +31,7 @@
 		<br>
 
 		{% for blog in blogs%}
-			<div id = "each-blog">
+			<div id = "each-blog1">
 				<div id="blog-title">{{blog.title}}</div>
 				<br>
 				{% set editsurl = '/myblog/' + 'editpost/' + blog.blog_id%}				
