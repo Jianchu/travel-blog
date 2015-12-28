@@ -196,13 +196,6 @@ a:active{
     float: right;
 }
 
-#wiki{
-    width: 95%;
-    height: 200px;
-    margin: auto;
-    padding: 10px;
-}
-
 .more{
 	float:right;
 	text-decoration: underline;
@@ -253,4 +246,12 @@ a:active{
 	position:relative; 
 	left:80px; 
 	background-color: Lavender;
+}
+
+#wiki{
+    width: 95%;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+    position:absolute;
 }

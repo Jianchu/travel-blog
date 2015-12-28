@@ -136,9 +136,13 @@ function loadNYT(){
     	};
     }).error(function(e){
     	   $nytHeaderElem.text("What?!");
-    });
+    });	
 	return false;
 };
+
+function news(){
+    $("#dialog").dialog();
+}
 
 // function getLocation(){
 // 	ipapi_url = "http://ip-api.com/json";
@@ -160,3 +164,4 @@ if (window.location.protocol != "http:")
 loadData();
 loadWikiEvents();
 $('#form-container').submit(loadNYT);
+$('#dialog').dialog();

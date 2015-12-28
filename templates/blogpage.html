@@ -39,30 +39,34 @@
 			<br>
 		{%endif%}
 
-	    <form id="form-container" class="form-container">
-	        <label for="province">Province: </label><input type="text" id="province" value="">
-	        <label for="city">City: </label><input type="text" id="city" value="">
+		<form id="form-container" class="form-container">
+			<label for="province">Province: </label><input type="text" id="province" value="">
+			<label for="city">City: </label><input type="text" id="city" value="">
 
 	        <button id="submit-btn">Submit</button>
 	    </form>
 	    <br>
 	    <br>
-	   	<div class="nytimes-container">
-	        <h3 id="nytimes-header">New York Times Articles</h3>
-	        <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!</ul>
-	        <div id = "map" class = "map"> </div>
-	    </div>
 
-		{% for blog in all_blogs%}
-			<div id = "each-blog">
-				<div id="blog-title">{{blog.title}}</div>
-				<div id="blog-user">author: {{blog.username}}</div>
-				<div id="blog-created">{{blog.created.strftime("%Y-%m-%d %H:%M:%S")}}</div>
-				<div id = "blog-content">{{blog.content}}</div>
-				<br>
-				<br>
-			</div>
-		{%endfor%}
+		<div>
+			<div class="nytimes-container">
+			<h3 id="nytimes-header">New York Times Articles</h3>
+				<ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!</ul>
+		        <div id = "map" class = "map"> </div>
+		    </div>
+
+			{% for blog in all_blogs%}
+				<div id = "each-blog">
+					<div id="blog-title">{{blog.title}}</div>
+					<div id="blog-user">author: {{blog.username}}</div>
+					<div id="blog-created">{{blog.created.strftime("%Y-%m-%d %H:%M:%S")}}</div>
+					<div id = "blog-content">{{blog.content}}</div>
+					<br>
+					<br>
+				</div>
+			{%endfor%}
+		</div>
+
 		<div id = "splitLine"><hr></div>
 		
 		<div id = "wiki">
@@ -70,7 +74,6 @@
 			<div id = "births"></div>
 			<div id = "holidays"></div>			
 		</div>
-
 
 		<script src="/js/libs/jquery.min.js"></script>
 		<script src="/js/script.js"></script>
